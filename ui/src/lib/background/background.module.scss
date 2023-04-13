@@ -12,8 +12,8 @@
     rgba(255, 255, 255, 1) 0%,
     rgba(119, 194, 255, 0.365983893557423) 100%
   );
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
 
   &-image {
     object-fit: contain;

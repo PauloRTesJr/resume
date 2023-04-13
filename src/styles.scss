@@ -5,8 +5,35 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  --primary-color: #0c1c2b;
+  --secondary-color: #132a3e;
+  --highlight-color: #25709c;
 }
 body {
   font-family: 'Roboto', sans-serif;
   list-style-type: none;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.8rem 0;
+  color: var(--secondary-color);
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
+
+a {
+  color: var(--highlight-color);
 }
