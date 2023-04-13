@@ -1,0 +1,30 @@
+.background {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(119, 194, 255, 0.365983893557423) 100%
+  );
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+
+  &-image {
+    object-fit: contain;
+    transition: opacity 0.5s;
+
+    &.fade-out {
+      opacity: 0;
+    }
+
+    &.fade-in {
+      opacity: 1;
+    }
+  }
+}
