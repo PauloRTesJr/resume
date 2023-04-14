@@ -7,8 +7,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "yarn build --baseHref=/resume/",
+    "deploy": "gh-pages -d dist/resume"
   },
   "private": true,
   "dependencies": {

@@ -12,7 +12,11 @@ export function App() {
         <div className={styles['left-panel']}>
           <Panel>
             <div className={styles['left-panel-content']}>
-              <Avatar src={foto} alt="Paulo Tessarolli" size={200} />
+              <Avatar
+                src={'https://github.com/paulortesjr.png'}
+                alt="Paulo Tessarolli"
+                size={200}
+              />
               <h1>Personal Information</h1>
               <h2>Paulo Roberto Tessarolli Junior</h2>
               <p>

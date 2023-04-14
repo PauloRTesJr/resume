@@ -6,14 +6,14 @@
   justify-content: center;
   align-items: center;
   z-index: -1;
-  background: rgb(255, 255, 255);
+  background: rgb(222, 222, 222);
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 1) 0%,
     rgba(119, 194, 255, 0.365983893557423) 100%
   );
-  filter: blur(10px);
-  -webkit-filter: blur(10px);
+  // filter: blur(10px);
+  // -webkit-filter: blur(10px);
 
   &-image {
     object-fit: contain;
