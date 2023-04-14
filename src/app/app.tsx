@@ -58,6 +58,9 @@ export function App() {
             <div className={styles['right-panel-content']}>
               <h1>Work Experience</h1>
               <WorkSection {...jobs.opus} />
+              <WorkSection {...jobs.i9} />
+              <WorkSection {...jobs.newway} />
+              <WorkSection {...jobs.ltia} />
             </div>
           </Panel>
         </div>

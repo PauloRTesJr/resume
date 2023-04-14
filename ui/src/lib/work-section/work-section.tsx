@@ -1,6 +1,6 @@
+import { technologies as technologiesData } from '@resume/models';
+import Chip from '../chip/chip';
 import styles from './work-section.module.scss';
-
-/* eslint-disable-next-line */
 export interface WorkSectionProps {
   company: string;
   job: string;
@@ -16,6 +16,10 @@ export function WorkSection({
   description,
   technologies,
 }: WorkSectionProps) {
+  const renderTechnology = (technology: string) => {
+    const data = technologiesData[technology];
+    return <Chip key={technology} bgColor={data.color} title={data.name} />;
+  };
   return (
     <div className={styles['container']}>
       <h2>
@@ -25,6 +29,9 @@ export function WorkSection({
       <p>
         <i>{description}</i>
       </p>
+      <div className={styles['technologies']}>
+        {technologies.map(renderTechnology)}
+      </div>
     </div>
   );
 }

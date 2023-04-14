@@ -1,3 +1,9 @@
 .period {
   color: var(--highlight-color);
 }
+
+.technologies {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
