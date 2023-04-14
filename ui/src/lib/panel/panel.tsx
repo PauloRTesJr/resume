@@ -8,8 +8,13 @@ export interface PanelProps {
 }
 
 export function Panel({ children, type }: PanelProps) {
+  const isMobileOrTablet =
+    window.innerWidth <= 768 && window.innerHeight <= 1024;
+
+  const classType = isMobileOrTablet ? 'mobile' : type;
+
   return (
-    <div className={`${styles['panel-container']} ${styles[type]}`}>
+    <div className={`${styles['panel-container']} ${styles[classType]}`}>
       {children}
     </div>
   );
