@@ -15,7 +15,7 @@ export function App() {
               <Avatar
                 src={'https://github.com/paulortesjr.png'}
                 alt="Paulo Tessarolli"
-                size={200}
+                size={125}
               />
               <h1>Personal Information</h1>
               <h2>Paulo Roberto Tessarolli Junior</h2>

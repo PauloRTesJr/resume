@@ -18,24 +18,29 @@
   flex: 2;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
 
   &-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 3rem;
+    padding: 1.5rem;
+
+    & img {
+      align-self: center;
+    }
   }
 
   &-about {
-    text-align: center;
+    text-align: left;
+    font-size: 0.8rem;
   }
 
   &-actions {
     display: flex;
     gap: 1rem;
     margin: 1rem 0;
+    align-self: center;
   }
 }
 
