@@ -1,5 +1,5 @@
 import styles from './app.module.scss';
-import { Avatar, Background, Panel } from '@resume/ui';
+import { Avatar, Background, Panel, WorkSection } from '@resume/ui';
 import foto from '../assets/images/foto.jpg';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -10,7 +10,7 @@ export function App() {
       <Background />
       <div className={styles['main-container']}>
         <div className={styles['left-panel']}>
-          <Panel>
+          <Panel type="left">
             <div className={styles['left-panel-content']}>
               <Avatar
                 src={'https://github.com/paulortesjr.png'}
@@ -22,6 +22,17 @@ export function App() {
               <p>
                 Email:{' '}
                 <a href="mailto:paulortesjr@gmail.com">paulortesjr@gmail.com</a>
+              </p>
+              <h2>About me</h2>
+              <p className={styles['left-panel-about']}>
+                I have over 7 years of experience as a Frontend Developer, and I
+                possess a strong understanding of API functionality, which I
+                gained from my background as a Fullstack developer. Although I
+                am well-versed in both areas, I have discovered that my passion
+                for coding lies primarily in Frontend development. I am an
+                ardent learner, and I enjoy studying and expanding my knowledge
+                to stay up-to-date with the latest trends and advancements in
+                the field.
               </p>
               <div className={styles['left-panel-actions']}>
                 <a
@@ -39,22 +50,22 @@ export function App() {
                   <GitHubIcon fontSize="large" />
                 </a>
               </div>
-              <h2>About me</h2>
-              <p className={styles['left-panel-about']}>
-                I have over 7 years of experience as a Frontend Developer, and I
-                possess a strong understanding of API functionality, which I
-                gained from my background as a Fullstack developer. Although I
-                am well-versed in both areas, I have discovered that my passion
-                for coding lies primarily in Frontend development. I am an
-                ardent learner, and I enjoy studying and expanding my knowledge
-                to stay up-to-date with the latest trends and advancements in
-                the field.
-              </p>
             </div>
           </Panel>
         </div>
         <div className={styles['right-panel']}>
-          <h1>Right Panel</h1>
+          <Panel type="right">
+            <div className={styles['right-panel-content']}>
+              <h1>Work Experience</h1>
+              <WorkSection
+                company="Opus Software"
+                job="Software Development Analyst"
+                period="Nov/2016 - Apr/2023"
+                technologies={['Angular', 'React', 'Svelte']}
+                description="To Do"
+              />
+            </div>
+          </Panel>
         </div>
       </div>
     </div>
