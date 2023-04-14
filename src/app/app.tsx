@@ -1,14 +1,14 @@
 import styles from './app.module.scss';
 import { Avatar, Background, Panel, WorkSection } from '@resume/ui';
-import foto from '../assets/images/foto.jpg';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { jobs } from '@resume/models';
 
 export function App() {
   return (
-    <div className={styles['main']}>
+    <>
       <Background />
-      <div className={styles['main-container']}>
+      <div className={styles['main']}>
         <div className={styles['left-panel']}>
           <Panel type="left">
             <div className={styles['left-panel-content']}>
@@ -57,18 +57,12 @@ export function App() {
           <Panel type="right">
             <div className={styles['right-panel-content']}>
               <h1>Work Experience</h1>
-              <WorkSection
-                company="Opus Software"
-                job="Software Development Analyst"
-                period="Nov/2016 - Apr/2023"
-                technologies={['Angular', 'React', 'Svelte']}
-                description="To Do"
-              />
+              <WorkSection {...jobs.opus} />
             </div>
           </Panel>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

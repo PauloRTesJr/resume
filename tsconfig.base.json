@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@resume/models": ["models/src/index.ts"],
       "@resume/ui": ["ui/src/index.ts"]
     }
   },

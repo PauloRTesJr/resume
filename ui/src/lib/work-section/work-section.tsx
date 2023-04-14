@@ -9,10 +9,22 @@ export interface WorkSectionProps {
   technologies: string[];
 }
 
-export function WorkSection(props: WorkSectionProps) {
+export function WorkSection({
+  company,
+  job,
+  period,
+  description,
+  technologies,
+}: WorkSectionProps) {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to WorkSection!</h1>
+      <h2>
+        {company} - {job}
+      </h2>
+      <p className={styles['period']}>{period}</p>
+      <p>
+        <i>{description}</i>
+      </p>
     </div>
   );
 }
