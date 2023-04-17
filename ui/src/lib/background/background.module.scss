@@ -6,12 +6,7 @@
   justify-content: center;
   align-items: center;
   z-index: -1;
-  background: rgb(222, 222, 222);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(119, 194, 255, 0.365983893557423) 100%
-  );
+  background: linear-gradient(90deg, #970606, #aa5b00);
 
   &-image {
     object-fit: contain;
@@ -27,8 +22,38 @@
   }
 }
 
-.backgrounds {
-  width: 110%;
-  height: 110%;
-  object-fit: cover;
+.geometric::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  top: 40%;
+  width: 120vw;
+  height: 150vh;
+  background: #17141d;
+  border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+  will-change: border-radius, transform, opacity;
+  animation: sliderShape 10s linear infinite;
+  display: block;
+  z-index: -1;
+  -webkit-animation: sliderShape 10s linear infinite;
+}
+
+@keyframes sliderShape {
+  0%,
+  100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  34% {
+    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+  }
 }
