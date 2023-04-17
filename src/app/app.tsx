@@ -1,10 +1,27 @@
 import styles from './app.module.scss';
-import { Avatar, Background, Panel, WorkSection } from '@resume/ui';
+import {
+  Avatar,
+  Background,
+  Divider,
+  Panel,
+  Skill,
+  WorkSection,
+} from '@resume/ui';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { jobs } from '@resume/models';
+import { Technology, jobs, technologies } from '@resume/models';
 
 export function App() {
+  const renderSkillItem = (technology: Technology) => {
+    return (
+      <Skill
+        name={technology.name}
+        color={technology.color}
+        score={technology.score}
+        key={technology.name}
+      />
+    );
+  };
   return (
     <>
       <Background />
@@ -61,6 +78,11 @@ export function App() {
               <WorkSection {...jobs.i9} />
               <WorkSection {...jobs.newway} />
               <WorkSection {...jobs.ltia} />
+              <Divider />
+              <h1>Skills</h1>
+              <div className={styles['skills-container']}>
+                {Object.values(technologies).map(renderSkillItem)}
+              </div>
             </div>
           </Panel>
         </div>

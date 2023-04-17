@@ -1,0 +1,40 @@
+.progress-bar {
+  position: relative;
+  height: 20px;
+  width: 100%;
+  background-color: #aaa;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.progress-bar-fill:before {
+  content: attr(data-score);
+  display: block;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-bar-fill:hover {
+  width: calc(var(--score) * 20%);
+}
+
+.progress-bar-fill:hover:before {
+  content: attr(data-label);
+  font-size: 14px;
+}
+
+.progress-bar-fill:hover:after {
+  background-color: #4caf50;
+}
