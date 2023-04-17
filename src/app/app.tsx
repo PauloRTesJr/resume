@@ -56,6 +56,7 @@ export function App() {
                   href="https://www.linkedin.com/in/paulortesjr/"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Checkout my LinkedIn page!"
                 >
                   <LinkedInIcon fontSize="large" />
                 </a>
@@ -63,6 +64,7 @@ export function App() {
                   href="https://github.com/PauloRTesJr"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Checkout my Github page!"
                 >
                   <GitHubIcon fontSize="large" />
                 </a>
