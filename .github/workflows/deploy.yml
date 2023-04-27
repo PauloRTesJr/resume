@@ -3,39 +3,24 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main # Change this to the name of your main branch
+  pull_request:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-        name: Checkout the repo
-        uses: actions/checkout@v3
+      - name: Checkout the repo
+        uses: actions/checkout@v2
 
-        name: Install dependencies
+      - name: Install dependencies
         run: |
           npm install
           npm run build --baseHref=/resume/
 
-        name: Deploy to GitHub Pages
-        uses: actions/upload-pages-artifact
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          path: dist/resume
-
-  deploy:
-    needs: build
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    steps:
-        name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
+          branch: gh-pages # Change this to the name of your publishing branch
+          folder: dist/resume
