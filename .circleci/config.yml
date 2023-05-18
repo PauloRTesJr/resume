@@ -5,6 +5,7 @@ jobs:
   main:
     docker:
       - image: cimg/node:lts-browsers
+    parallelism: 3
     steps:
       - checkout
       - run: npm ci
