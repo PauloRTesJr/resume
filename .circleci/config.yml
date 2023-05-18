@@ -45,7 +45,7 @@ workflows:
       - main
   deploy:
     jobs:
-      - build
+      - main
       - deploy-to-github-pages:
           requires:
             - build-and-test
