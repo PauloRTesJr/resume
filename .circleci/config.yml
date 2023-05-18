@@ -16,7 +16,8 @@ jobs:
       - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
       - run: npx nx affected --base=$NX_BASE --head=$NX_HEAD -t build --parallel=3
   deploy-to-github-pages:
-    executor: node-executor
+    docker:
+      - image: cimg/node:lts-browsers
     steps:
       - checkout
 
@@ -48,4 +49,4 @@ workflows:
       - main
       - deploy-to-github-pages:
           requires:
-            - build-and-test
+            - main
