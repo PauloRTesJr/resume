@@ -50,3 +50,6 @@ workflows:
       - deploy-to-github-pages:
           requires:
             - main
+          filters:
+            branches:
+              only: master
