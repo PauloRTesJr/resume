@@ -1,5 +1,23 @@
 /* Your styles goes here. */
 
+// Apply Montserrat to all headings
+:global(h1),
+:global(h2),
+:global(h3),
+:global(h4),
+:global(h5),
+:global(h6) {
+  font-family: 'Montserrat', sans-serif;
+}
+
+// Ensure Open Sans is applied to other text elements if not inherited
+:global(p),
+:global(a),
+:global(span),
+:global(div) {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .main {
   display: flex;
   width: 100vw;
@@ -29,6 +47,7 @@
   flex: 2;
   justify-content: center;
   align-items: center;
+  background-color: var(--panel-bg-color);
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -40,20 +59,39 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 2.5rem; // Increased padding
 
     & img {
       align-self: center;
+      margin-bottom: 1rem; // Space below image
+    }
+
+    & > h1 { // Direct children
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    & > h2 { // Direct children
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.3rem;
+    }
+    & > p { // Direct children paragraphs
+      margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
     @media screen and (max-width: 768px) {
-      padding: 0rem;
+      padding: 1.5rem; // Adjusted padding for mobile
     }
   }
 
   &-about {
     text-align: left;
     font-size: 0.8rem;
+    font-family: 'Open Sans', sans-serif; // Ensure Open Sans
+    color: var(--secondary-color); // Use secondary text color for about section
+    margin-bottom: 1.5rem; // More space before actions
+    line-height: 1.6; // Improved readability
   }
 
   &-actions {
@@ -61,6 +99,26 @@
     gap: 1rem;
     margin: 1rem 0;
     align-self: center;
+    a {
+      color: var(--highlight-color); // Base color for the link/icon
+      transition: transform 0.2s ease-in-out; // Transition for scaling
+
+      svg {
+        fill: var(--highlight-color); // Base fill for SVG
+        transition: fill 0.2s ease-in-out; // Transition for fill color
+        display: block; // Prevents potential layout shifts with transform
+      }
+
+      &:hover {
+        transform: scale(1.15); // Scale up the whole anchor/icon container
+
+        svg {
+          // Using filter for brightness as lighten() might not be available in all pure CSS contexts
+          // and ensures we modify the existing --highlight-color.
+          filter: brightness(120%);
+        }
+      }
+    }
   }
 }
 
@@ -70,6 +128,7 @@
   justify-content: center;
   align-items: center;
   margin: 3rem 2rem;
+  background-color: var(--panel-bg-color);
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -80,15 +139,50 @@
   &-content {
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 2.5rem; // Increased padding
 
     @media screen and (min-width: 768px) {
       max-height: 80vh;
       overflow: auto;
     }
+
+    // Ensure Open Sans is applied to text elements within right-panel-content
+    & :global(p),
+    & :global(span),
+    & :global(div) {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--primary-color);
+      line-height: 1.6; // Improve paragraph readability
+    }
+    & :global(a) {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--highlight-color); // Links use accent color
+    }
+
+    // Ensure Montserrat is applied to headings within right-panel-content
+    // And add specific margins for section titles
+    & > :global(h1) { // Direct children, e.g., "Work Experience", "Skills" titles
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary-color); // Headings use primary text color
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      &:first-child {
+        margin-top: 0; // No top margin for the very first heading
+      }
+    }
+    & :global(h2), // Other headings if any
+    & :global(h3),
+    & :global(h4),
+    & :global(h5),
+    & :global(h6) {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary-color);
+    }
   }
 
   .skills-container {
+    margin-top: 0.5rem; // Add some space above skills container if needed
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;

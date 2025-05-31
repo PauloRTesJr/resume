@@ -1,9 +1,31 @@
-.period {
-  color: var(--highlight-color);
-}
+.container { // Root class for each work section
+  margin-bottom: 2.5rem; // More space between work sections
 
-.technologies {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  h2 { // Company - Job title
+    margin-bottom: 0.25rem; // Small space below title
+  }
+
+  p { // Targeting all paragraphs within, including description
+    line-height: 1.6;
+  }
+
+  .period { // Class for job period
+    color: var(--secondary-color); // Changed from highlight to secondary for less emphasis
+    font-size: 0.9rem; // Slightly smaller font for period
+    margin-bottom: 0.5rem; // Space it from technologies/description
+  }
+
+  .technologies {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem; // Space above technologies
+    margin-bottom: 0.75rem; // Space between tech chips and description (if description is below)
+  }
+
+  // Specifically target the description paragraph if it's sibling to technologies
+  // Assuming the description paragraph is the one with italics, and is a direct child of .container
+  & > p:has(i) {
+    margin-top: 0.75rem; // Space between technologies and description
+  }
 }

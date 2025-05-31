@@ -6,7 +6,8 @@
   justify-content: center;
   align-items: center;
   z-index: -1;
-  background: linear-gradient(90deg, #970606, #aa5b00);
+  // The main background color is now set globally in src/styles.scss
+  // No need for the linear-gradient here anymore.
 
   &-image {
     object-fit: contain;
@@ -30,7 +31,7 @@
   top: 40%;
   width: 120vw;
   height: 150vh;
-  background: #17141d;
+  background: #000000; // Darker color for the geometric shape
   border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
   will-change: border-radius, transform, opacity;
   animation: sliderShape 10s linear infinite;

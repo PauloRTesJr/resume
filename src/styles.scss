@@ -5,13 +5,17 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  --primary-color: #0c1c2b;
-  --secondary-color: #132a3e;
-  --highlight-color: #25709c;
+  --primary-color: #E0E0E0; // Primary Text
+  --secondary-color: #A0A0A0; // Secondary Text
+  --highlight-color: #BB86FC; // Accent Color 1
+  --accent-color-2: #03DAC6; // Accent Color 2
+  --panel-bg-color: #1E1E1E; // Panel Background
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   list-style-type: none;
+  background-color: #121212; // Main Background
+  color: #E0E0E0; // Default Text Color
 }
 
 html,
@@ -37,6 +41,7 @@ p {
   font-size: 1rem;
   font-weight: 400;
   margin: 0.5rem 0;
+  color: var(--primary-color); // Ensure paragraphs also use primary text color
 }
 
 a {
