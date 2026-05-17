@@ -22,13 +22,12 @@ export function WorkSection({
   };
   return (
     <div className={styles['container']}>
-      <h2>
-        {company} - {job}
-      </h2>
+      <div className={styles['header']}>
+        <h2 className={styles['company']}>{company}</h2>
+        <span className={styles['role']}>{job}</span>
+      </div>
       <p className={styles['period']}>{period}</p>
-      <p>
-        <i>{description}</i>
-      </p>
+      <p className={styles['description']}>{description}</p>
       <div className={styles['technologies']}>
         {technologies.map(renderTechnology)}
       </div>

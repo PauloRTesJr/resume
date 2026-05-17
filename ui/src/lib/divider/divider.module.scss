@@ -1,7 +1,12 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+.divider {
+  border: 0;
+  height: 1px;
+  margin: 2rem 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(124, 92, 255, 0.45),
+    rgba(34, 211, 238, 0.45),
+    transparent
+  );
+}
