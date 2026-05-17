@@ -61,12 +61,12 @@ export function App() {
                   <span>{'// about'}</span>
                 </div>
                 <p className={styles['left-panel-about']}>
-                  I have over {yearsOfExperience}+ years of experience as a
-                  Frontend Developer, with a strong understanding of API design
-                  from my background as a Fullstack developer. Although I am
-                  well-versed in both, my passion lies in Frontend. I am an
-                  ardent learner, constantly studying to stay up-to-date with
-                  modern web trends and tooling.
+                  I have {yearsOfExperience}+ years of experience as a Frontend
+                  Developer, with a strong understanding of API design from my
+                  background as a Fullstack developer. Although I am well-versed
+                  in both, my passion lies in Frontend. I am an ardent learner,
+                  constantly studying to stay up-to-date with modern web trends
+                  and tooling.
                 </p>
 
                 <div className={styles['section-label']}>

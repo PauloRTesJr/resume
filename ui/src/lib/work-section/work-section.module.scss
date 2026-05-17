@@ -68,9 +68,14 @@
 }
 
 .role::before {
-  content: '·';
-  margin-right: 0.5rem;
-  color: var(--text-faint);
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  margin-right: 0.6rem;
+  vertical-align: middle;
 }
 
 .period {
