@@ -1,7 +1,49 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(
+    from 0deg,
+    #7c5cff,
+    #22d3ee,
+    #f472b6,
+    #7c5cff
+  );
+  animation: spin 8s linear infinite;
+  box-shadow:
+    0 0 32px rgba(124, 92, 255, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 90deg,
+    rgba(124, 92, 255, 0.35),
+    rgba(34, 211, 238, 0.35),
+    rgba(244, 114, 182, 0.35),
+    rgba(124, 92, 255, 0.35)
+  );
+  filter: blur(18px);
+  z-index: -1;
+  opacity: 0.85;
+  animation: spin 14s linear infinite reverse;
+}
+
+.image {
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #0a0f1e;
+  border: 2px solid #0a0f1e;
+}
+
+@keyframes spin {
+  to { transform: rotate(1turn); }
+}

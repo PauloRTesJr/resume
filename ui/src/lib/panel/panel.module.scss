@@ -1,27 +1,77 @@
 .panel-container {
-  width: 90%;
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  transition: transform 1s ease 0s;
-  padding: 1rem;
   position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(22, 28, 52, 0.78), rgba(14, 18, 36, 0.72));
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--border);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 30px 80px -30px rgba(0, 0, 0, 0.7);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.5s ease, border-color 0.4s ease;
+  overflow: hidden;
+}
+
+/* Animated gradient border on hover */
+.panel-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient-accent);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+/* Subtle inner highlight */
+.panel-container::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.panel-container:hover {
+  border-color: var(--border-strong);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 40px 100px -30px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(124, 92, 255, 0.08);
+}
+
+.panel-container:hover::before {
+  opacity: 0.55;
 }
 
 .left {
-  transform: perspective(1500px) rotateY(10deg);
-  &:hover {
-    transform: perspective(3000px) rotateY(2deg);
-  }
+  transform: translateY(0);
 }
 
 .right {
-  transform: perspective(1500px) rotateY(-10deg);
-  &:hover {
-    transform: perspective(3000px) rotateY(-2deg);
-  }
+  transform: translateY(0);
 }
 
 .mobile {
   width: 100%;
+  padding: 1.25rem;
 }

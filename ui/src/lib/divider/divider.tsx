@@ -1,5 +1,7 @@
+import styles from './divider.module.scss';
+
 export function Divider() {
-  return <hr style={{ margin: '2rem 0' }} />;
+  return <hr className={styles['divider']} />;
 }
 
 export default Divider;
